@@ -40,6 +40,8 @@ Note: If using a Salt master, the line to change is:
 
 ## Using a Salt master
 
+A Salt master can be used to configure your local VMs, although this is probably unneccesary in most circumstances. However, if you are provisioning a machine outside of your local environment wuthout using Vagrant you may find it easier to use a Salt master. If managing multiple machines with varying setups, using a Salt master also has the rather large benefit of allowing you to control all your minions from a single box. If, for example, you want to make an upgrade across all your machines, you can define the upgrade once in your Salt master's state repository, and then ask all your minions to bring themselves in line with the current 'highstate' config.
+
 The provision.sh script contains information on what to do to set up your Vagrant VMs to use a Salt master.
 
 Before you can do it is necessary that Salt master be configure. Do this by this repo to the box which will be your Salt master and then populate the pillar data. Each time a machine is created that needs to use the Salt master, you will need to authenticate it my accepting its key on the Salt master using the 'salt-key' command.
