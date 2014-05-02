@@ -1,0 +1,29 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+    config.vm.box = "netsensia/ubuntu-trusty64-salt"
+
+    config.vm.network :forwarded_port, guest: 80, host: 8083
+    config.vm.network :forwarded_port, guest: 8080, host: 9083
+
+   config.vm.provider "vmware_fusion" do |v, override|
+         v.vmx["memsize"] = "1024"
+         v.vmx["numvcpus"] = "1"
+   end
+
+   config.vm.provider "vmware_workstation" do |v, override|
+         v.vmx["memsize"] = "1024"
+         v.vmx["numvcpus"] = "1"
+   end
+
+    config.vm.synced_folder "../../../", "/var/www/", type: "nfs"
+    config.vm.synced_folder "../../../pillar", "/srv/pillar/"
+    config.vm.synced_folder "../../salt", "/srv/salt/"
+
+    config.vm.provision "shell", path: "provision.sh"
+
+end

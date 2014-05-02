@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jenkins.plugins.publish__over__ssh.BapSshPublisherPlugin_-Descriptor plugin="publish-over-ssh@1.11">
+  <hostConfigurations>
+    <jenkins.plugins.publish__over__ssh.BapSshHostConfiguration>
+      <name>dzsalt.netsensia.com</name>
+      <hostname>dzsalt.netsensia.com</hostname>
+      <username>jenkins</username>
+      <secretPassword>y7gABsU+9HwMyNJyYfdg/Q==</secretPassword>
+      <remoteRootDir>/var/www</remoteRootDir>
+      <port>22</port>
+      <commonConfig class="jenkins.plugins.publish_over_ssh.BapSshCommonConfiguration">
+        <secretPassphrase>y7gABsU+9HwMyNJyYfdg/Q==</secretPassphrase>
+        <key></key>
+        <keyPath>{{ pillar['jenkins']['private_key_dir'] }}/id_rsa</keyPath>
+        <disableAllExec>false</disableAllExec>
+      </commonConfig>
+      <timeout>300000</timeout>
+      <overrideKey>false</overrideKey>
+      <disableExec>false</disableExec>
+      <keyInfo>
+        <secretPassphrase>GhMNwVckSJFek5Uml5LXquaKcabgzzR3p2p5uG0L5KoX6Mi++NYOgokuSuB4m7gF</secretPassphrase>
+        <key></key>
+        <keyPath></keyPath>
+      </keyInfo>
+    </jenkins.plugins.publish__over__ssh.BapSshHostConfiguration>
+  </hostConfigurations>
+  <commonConfig reference="../hostConfigurations/jenkins.plugins.publish__over__ssh.BapSshHostConfiguration/commonConfig"/>
+  <defaults class="jenkins.plugins.publish_over_ssh.options.SshPluginDefaults"/>
+</jenkins.plugins.publish__over__ssh.BapSshPublisherPlugin_-Descriptor>
