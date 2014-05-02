@@ -1,6 +1,6 @@
 # Vagrant/Salt/Jenkins
 
-This repo holds the Salt state definitions and pillar structure that can be used by a Salt master to be used in a deployment pipeline as described in my [blog post on the subject](www.afewmorelines.com/a-full-deployment-pipeline-using-vagrant-saltstack-and-jenkins/).
+This repo holds the Salt state definitions and pillar structure that can be used by a Salt master to be used in a deployment pipeline as described in my [blog post on the subject](http://www.afewmorelines.com/a-full-deployment-pipeline-using-vagrant-saltstack-and-jenkins/).
 
 It also contains Vagrant configs for firing up any box in the process as a local VM. Vagrant is not currently used to provision the boxes in the cloud - to do that we create the cloud machine then configure it to use the Salt master and bring up the highstate.
 
