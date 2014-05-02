@@ -11,6 +11,8 @@ I don't use the Salt provisioner in Vagrant, instead I have created a [VMware bo
 * Add definitions for an example website.
 * Add the Jenkins job for that website showing how Jenkins can call the Salt master for config values during builds and how it deploys code binaries to other machines using keys provided during the automated provisioning of the Jenkins box.
 
+You'll notice Salt states that are not used. These are states that I have used for various projects which I've removed from this public repo as they describe machine configs for clients and are not appropriate for being made public. The states themselves are generic so I've left them in for reference and for future use.
+
 ## Building Jenkins
 
 ### In a local VM
