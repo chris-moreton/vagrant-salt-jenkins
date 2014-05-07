@@ -4,6 +4,7 @@ include:
   - selenium
   - ssh
   - aws
+  - git
   
 tools:
   pkg:
@@ -13,8 +14,6 @@ tools:
       - zip
       - dos2unix
       - build-essential
-      - libssl-dev
-      - git
       - pdftk
       - openjdk-7-jre-headless
       - python-software-properties

@@ -24,7 +24,7 @@ LogLevel INFO
 
 # Authentication:
 LoginGraceTime 120
-PermitRootLogin yes
+PermitRootLogin no
 StrictModes yes
 
 RSAAuthentication yes
@@ -87,4 +87,4 @@ Subsystem sftp /usr/lib/openssh/sftp-server
 UsePAM yes  
 UseDNS no
 
-AllowUsers vagrant {{ pillar['netsensia']['admin_username'] }} root ubuntu {{ pillar['netsensia']['jenkins_username'] }}
+AllowUsers vagrant {{ pillar['netsensia']['admin_username'] }} {{ pillar['netsensia']['jenkins_username'] }}

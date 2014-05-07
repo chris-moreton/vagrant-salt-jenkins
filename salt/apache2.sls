@@ -1,5 +1,8 @@
 include:
   - netsensia
+{% if 'vagrant' not in grains['id'] and 'jenkins' not in grains['id'] %}
+  - jenkins-user
+{% endif %}
   
 apache2:
   pkg:
@@ -52,7 +55,7 @@ a2enconf nogit:
     - watch_in:
       - module: apache2-restart
       
-{% if grains['virtual'] != 'VMware' %}
+{% if 'vagrant' not in grains['id'] and 'jenkins' not in grains['id'] %}
 /var/www:
   file.directory:
     - mode: 775

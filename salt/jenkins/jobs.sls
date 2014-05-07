@@ -1,17 +1,26 @@
 include:
   - jenkins
   
-/tmp/directorzone_config.xml:
+/usr/bin/jenkins_job:
   file.managed:
-    - source: salt://files/jenkins/jobs/directorzone.xml
+    - source: salt://files/jenkins/jenkins_job
+    - mode: 755
     
-jenkins.job.directorzone:
+{% for jobName in ['ukfootballfinder', 'dexysden', 'ukffteams'] %}
+
+/tmp/{{ jobName }}_config.xml:
+  file.managed:
+    - source: salt://files/jenkins/jobs/{{ jobName }}.xml
+    
+jenkins.job.{{ jobName }}:
   cmd.run:
-    - unless: ls /var/lib/jenkins/jobs/Directorzone
-    - name: sleep 15 && java -jar /usr/bin/jenkins-cli.jar -s http://localhost:8080 create-job Directorzone < /tmp/directorzone_config.xml
+    - name: /usr/bin/jenkins_job {{ jobName }}
     - require:
       - pkg: jenkins
-      - file: /tmp/directorzone_config.xml
+      - file: /tmp/{{ jobName }}_config.xml
       - file: /usr/bin/jenkins-cli.jar
+      - file: /usr/bin/jenkins_job
     - watch_in:
       - module: jenkins-restart
+      
+{% endfor %}

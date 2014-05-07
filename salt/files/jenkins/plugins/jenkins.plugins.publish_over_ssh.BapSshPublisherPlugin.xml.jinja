@@ -2,23 +2,40 @@
 <jenkins.plugins.publish__over__ssh.BapSshPublisherPlugin_-Descriptor plugin="publish-over-ssh@1.11">
   <hostConfigurations>
     <jenkins.plugins.publish__over__ssh.BapSshHostConfiguration>
-      <name>dzsalt.netsensia.com</name>
+      <name>Directorzone Review</name>
       <hostname>dzsalt.netsensia.com</hostname>
       <username>jenkins</username>
-      <secretPassword>y7gABsU+9HwMyNJyYfdg/Q==</secretPassword>
+      <secretPassword>vdcAS+nR1K3O8bn8v0KYsg==</secretPassword>
       <remoteRootDir>/var/www</remoteRootDir>
       <port>22</port>
       <commonConfig class="jenkins.plugins.publish_over_ssh.BapSshCommonConfiguration">
-        <secretPassphrase>y7gABsU+9HwMyNJyYfdg/Q==</secretPassphrase>
+        <secretPassphrase>9usKVIYGaH4eYrcz76kOlNOX6KWwEBaRBSMK4kqyNagjLiM7PKj1CouemMRg8Ixj</secretPassphrase>
         <key></key>
-        <keyPath>{{ pillar['jenkins']['private_key_dir'] }}/id_rsa</keyPath>
+        <keyPath>/var/lib/jenkins/.ssh/id_rsa</keyPath>
         <disableAllExec>false</disableAllExec>
       </commonConfig>
       <timeout>300000</timeout>
       <overrideKey>false</overrideKey>
       <disableExec>false</disableExec>
       <keyInfo>
-        <secretPassphrase>GhMNwVckSJFek5Uml5LXquaKcabgzzR3p2p5uG0L5KoX6Mi++NYOgokuSuB4m7gF</secretPassphrase>
+        <secretPassphrase>RL0BpO4JhlJ+BekJe5Lj4oEhncCIX4jfJBn8EUwMQozNJNmx2uOxN4SZ839y2u/G6V3lHPaxGY5I24OkCcbK+L3XAEvp0dStzvG5/L9CmLI=</secretPassphrase>
+        <key></key>
+        <keyPath></keyPath>
+      </keyInfo>
+    </jenkins.plugins.publish__over__ssh.BapSshHostConfiguration>
+    <jenkins.plugins.publish__over__ssh.BapSshHostConfiguration>
+      <name>UK Football Finder</name>
+      <hostname>ukfootballfinder.co.uk</hostname>
+      <username>jenkins</username>
+      <secretPassword>vdcAS+nR1K3O8bn8v0KYsg==</secretPassword>
+      <remoteRootDir>/var/www</remoteRootDir>
+      <port>22</port>
+      <commonConfig class="jenkins.plugins.publish_over_ssh.BapSshCommonConfiguration" reference="../../jenkins.plugins.publish__over__ssh.BapSshHostConfiguration/commonConfig"/>
+      <timeout>300000</timeout>
+      <overrideKey>false</overrideKey>
+      <disableExec>false</disableExec>
+      <keyInfo>
+        <secretPassphrase>vdcAS+nR1K3O8bn8v0KYsg==</secretPassphrase>
         <key></key>
         <keyPath></keyPath>
       </keyInfo>

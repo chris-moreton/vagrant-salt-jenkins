@@ -2,6 +2,8 @@ include:
   - jenkins.jobs
   - jenkins.keys
   - jenkins.plugins
+  - jenkins.hosts
+  - jenkins.apache
   
 jenkins:
   pkgrepo.managed:

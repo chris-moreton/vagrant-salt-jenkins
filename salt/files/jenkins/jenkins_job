@@ -1,0 +1,12 @@
+#!/bin/bash
+
+sleep 1
+
+if [ -d /var/lib/jenkins/jobs/$1 ];
+then
+	ACTION=update
+else
+	ACTION=create
+fi
+
+java -jar /usr/bin/jenkins-cli.jar -s http://localhost:8080 $ACTION-job $1 < /tmp/$1_config.xml

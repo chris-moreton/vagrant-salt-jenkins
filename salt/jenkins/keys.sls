@@ -21,6 +21,17 @@ jenkins_ssh_directory:
       - pkg: jenkins
       - file: jenkins_ssh_directory
       
+{{ pillar['jenkins']['private_key_dir'] }}/ukfootballfinder_rsa:
+  file:
+    - managed
+    - contents_pillar: ukff:deploy_key
+    - user: {{ pillar['netsensia']['jenkins_username'] }}
+    - group: {{ pillar['netsensia']['jenkins_groupname'] }}
+    - mode: 600
+    - require:
+      - pkg: jenkins
+      - file: jenkins_ssh_directory
+      
 {{ pillar['jenkins']['private_key_dir'] }}/id_rsa:
   file:
     - managed
