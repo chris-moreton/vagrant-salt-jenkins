@@ -1,15 +1,12 @@
-# Vagrant/Salt/Jenkins
+# Vagrant/Salt/Jenkins/Dashing
 
-This repo holds the Salt state definitions and pillar structure that can be used by a Salt master to be used in a deployment pipeline as described in my [blog post on the subject](http://www.afewmorelines.com/a-full-deployment-pipeline-using-vagrant-saltstack-and-jenkins/).
+This repo holds the Salt state definitions that can be used by a Salt master to be used in a deployment pipeline as described in my [blog post on the subject](http://www.afewmorelines.com/a-full-deployment-pipeline-using-vagrant-saltstack-and-jenkins/).
 
-It also contains Vagrant configs for firing up any box in the process as a local VM. Vagrant is not currently used to provision the boxes in the cloud - to do that we create the cloud machine then configure it to use the Salt master and bring up the highstate.
+Perhaps the most useful thing here is the definition of the Jenkins box which installs the Jenkins server along with some job definitions, remote-access keys and the Dashing dashboard service.
+
+It contains Vagrant configs for firing up any box in the process as a local VM. Vagrant is not currently used to provision the boxes in the cloud - to do that we create the cloud machine then configure it to use the Salt master and bring up the highstate.
 
 I don't use the Salt provisioner in Vagrant, instead I have created a [VMware box with Salt 2014.1.3 installed](https://vagrantcloud.com/netsensia/ubuntu-trusty64-salt) which saves some time when Vagrant would otherwise be bootstrapping a clean VM with Salt.
-
-### Todo
-
-* Add definitions for an example website.
-* Add the Jenkins job for that website showing how Jenkins can call the Salt master for config values during builds and how it deploys code binaries to other machines using keys provided during the automated provisioning of the Jenkins box.
 
 You'll notice Salt states that are not used. These are states that I have used for various projects which I've removed from this public repo as they describe machine configs for clients and are not appropriate for being made public. The states themselves are generic so I've left them in for reference and for future use.
 
