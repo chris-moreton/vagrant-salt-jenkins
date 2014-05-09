@@ -2,17 +2,15 @@
 
 {% if 'jenkins' in grains['id'] %}
 
-{% set sourceCodeRoot = '/var/lib/jenkins/jobs/' + repo + '/workspace' %}
+{% set sourceCodeRoot = '/var/lib/jenkins/jobs/' + repo + '/dexysden/workspace' %}
 
 {% else %}
 
 include:
   - ukff.source
 
-{% if 'jenkins' in grains['id'] %}
-{% set sourceCodeRoot = '/var/lib/jenkins/jobs/' + repo + '/dexysden/workspace' %}
-{% else %}
 {% set sourceCodeRoot = '/var/www/' + repo %}
+
 {% endif %}
 
 {{ sourceCodeRoot}}/application.php:

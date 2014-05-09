@@ -9,5 +9,4 @@ include:
   - ukff.source-injections-dexysden
   - ukff.source-injections-ukfootballfinder
   - ukff.source-injections-ukffteams
-  - ukff.selenium-injections
   
