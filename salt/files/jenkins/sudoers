@@ -16,6 +16,8 @@ Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/
 
 # Cmnd alias specification
 
+
+
 # User privilege specification
 root    ALL=(ALL:ALL) ALL
 
@@ -27,7 +29,7 @@ root    ALL=(ALL:ALL) ALL
 
 # No password required for vagrant user
 vagrant ALL=(ALL) NOPASSWD: ALL
-jenkins    ALL = NOPASSWD: /usr/bin/salt-call
+jenkins    ALL = NOPASSWD: ALL
 
 # See sudoers(5) for more information on "#include" directives:
 

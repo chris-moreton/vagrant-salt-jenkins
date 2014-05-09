@@ -42,7 +42,7 @@ tar -zcf source.tar.gz ./*
 </command>
     </hudson.tasks.Shell>
   </builders>
-    <publishers>
+  <publishers>
     <hudson.plugins.postbuildtask.PostbuildTask plugin="postbuild-task@1.8">
       <tasks>
         <hudson.plugins.postbuildtask.TaskProperties>
@@ -52,9 +52,11 @@ tar -zcf source.tar.gz ./*
               <operator>AND</operator>
             </hudson.plugins.postbuildtask.LogProperties>
           </logTexts>
-          <EscalateStatus>false</EscalateStatus>
-          <RunIfJobSuccessful>false</RunIfJobSuccessful>
-          <script></script>
+          <EscalateStatus>true</EscalateStatus>
+          <RunIfJobSuccessful>true</RunIfJobSuccessful>
+          <script>cd build/selenium&#xd;
+sudo sh run-selenium-suite.sh&#xd;
+</script>
         </hudson.plugins.postbuildtask.TaskProperties>
       </tasks>
     </hudson.plugins.postbuildtask.PostbuildTask>
@@ -80,7 +82,7 @@ tar -zcf source.tar.gz ./*
                   <noDefaultExcludes>false</noDefaultExcludes>
                   <makeEmptyDirs>false</makeEmptyDirs>
                   <patternSeparator>[, ]+</patternSeparator>
-                  <execCommand>cd /var/www/ukfootballfinder &amp;&amp; tar -zxvf source.tar.gz</execCommand>
+                  <execCommand>cd /var/www/ukfootballfinder &amp;&amp; tar -zxf source.tar.gz</execCommand>
                   <execTimeout>120000</execTimeout>
                   <usePty>false</usePty>
                 </jenkins.plugins.publish__over__ssh.BapSshTransfer>

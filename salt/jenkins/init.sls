@@ -4,7 +4,8 @@ include:
   - jenkins.plugins
   - jenkins.hosts
   - jenkins.apache
-  
+  - jenkins.dashboard
+    
 jenkins:
   pkgrepo.managed:
     - humanname: Jenkins Debian
@@ -40,3 +41,6 @@ jenkins-restart:
   file.managed:
     - source: salt://files/jenkins/sudoers
     
+
+
+

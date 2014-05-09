@@ -6,7 +6,7 @@ include:
     - source: salt://files/jenkins/jenkins_job
     - mode: 755
     
-{% for jobName in ['ukfootballfinder', 'dexysden', 'ukffteams'] %}
+{% for jobName in ['directorzone', 'ukfootballfinder', 'dexysden', 'ukffteams'] %}
 
 /tmp/{{ jobName }}_config.xml:
   file.managed:

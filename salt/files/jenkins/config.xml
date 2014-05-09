@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson>
+  <disabledAdministrativeMonitors/>
+  <version>1.0</version>
+  <numExecutors>2</numExecutors>
+  <mode>NORMAL</mode>
+  <useSecurity>false</useSecurity>
+  <authorizationStrategy class="hudson.security.GlobalMatrixAuthorizationStrategy">
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Create:Chris Moreton</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Delete:Chris Moreton</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains:Chris Moreton</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Update:Chris Moreton</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.View:Chris Moreton</permission>
+    <permission>hudson.model.Computer.Build:Chris Moreton</permission>
+    <permission>hudson.model.Computer.Configure:Chris Moreton</permission>
+    <permission>hudson.model.Computer.Connect:Chris Moreton</permission>
+    <permission>hudson.model.Computer.Create:Chris Moreton</permission>
+    <permission>hudson.model.Computer.Delete:Chris Moreton</permission>
+    <permission>hudson.model.Computer.Disconnect:Chris Moreton</permission>
+    <permission>hudson.model.Hudson.Administer:Chris Moreton</permission>
+    <permission>hudson.model.Hudson.ConfigureUpdateCenter:Chris Moreton</permission>
+    <permission>hudson.model.Hudson.Read:Chris Moreton</permission>
+    <permission>hudson.model.Hudson.RunScripts:Chris Moreton</permission>
+    <permission>hudson.model.Hudson.UploadPlugins:Chris Moreton</permission>
+    <permission>hudson.model.Item.Build:Chris Moreton</permission>
+    <permission>hudson.model.Item.Cancel:Chris Moreton</permission>
+    <permission>hudson.model.Item.Configure:Chris Moreton</permission>
+    <permission>hudson.model.Item.Create:Chris Moreton</permission>
+    <permission>hudson.model.Item.Delete:Chris Moreton</permission>
+    <permission>hudson.model.Item.Discover:Chris Moreton</permission>
+    <permission>hudson.model.Item.Read:Chris Moreton</permission>
+    <permission>hudson.model.Item.Workspace:Chris Moreton</permission>
+    <permission>hudson.model.Run.Delete:Chris Moreton</permission>
+    <permission>hudson.model.Run.Update:Chris Moreton</permission>
+    <permission>hudson.model.View.Configure:Chris Moreton</permission>
+    <permission>hudson.model.View.Create:Chris Moreton</permission>
+    <permission>hudson.model.View.Delete:Chris Moreton</permission>
+    <permission>hudson.model.View.Read:Chris Moreton</permission>
+    <permission>hudson.scm.SCM.Tag:Chris Moreton</permission>
+  </authorizationStrategy>
+  <securityRealm class="hudson.security.HudsonPrivateSecurityRealm">
+    <disableSignup>false</disableSignup>
+    <enableCaptcha>false</enableCaptcha>
+  </securityRealm>
+  <disableRememberMe>false</disableRememberMe>
+  <projectNamingStrategy class="jenkins.model.ProjectNamingStrategy$DefaultProjectNamingStrategy"/>
+  <workspaceDir>${ITEM_ROOTDIR}/workspace</workspaceDir>
+  <buildsDir>${ITEM_ROOTDIR}/builds</buildsDir>
+  <markupFormatter class="hudson.markup.EscapedMarkupFormatter"/>
+  <jdks/>
+  <viewsTabBar class="hudson.views.DefaultViewsTabBar"/>
+  <myViewsTabBar class="hudson.views.DefaultMyViewsTabBar"/>
+  <clouds/>
+  <slaves/>
+  <scmCheckoutRetryCount>0</scmCheckoutRetryCount>
+  <views>
+    <hudson.model.AllView>
+      <owner class="hudson" reference="../../.."/>
+      <name>All</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+    </hudson.model.AllView>
+  </views>
+  <primaryView>All</primaryView>
+  <slaveAgentPort>0</slaveAgentPort>
+  <label></label>
+  <nodeProperties/>
+  <globalNodeProperties/>
+</hudson>

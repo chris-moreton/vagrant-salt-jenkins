@@ -18,6 +18,7 @@ jenkins_vhost_enabled:
     - unless: test -f /etc/apache2/sites-enabled/jenkins.conf
     - require:
       - file: /etc/apache2/sites-available/jenkins.conf
+      - file: /var/lib/jenkins/.htpasswd
     - watch_in:
       - module: apache2-restart
       
@@ -28,8 +29,6 @@ jenkins_vhost_enabled:
     - mode: {{ pillar['jenkins']['htpasswd']['mode'] }}
     - require:
       - pkg: jenkins
-    - watch_in:
-      - module: apache2-restart
       
 a2enmod proxy:
   cmd.run:
